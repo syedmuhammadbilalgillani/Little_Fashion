@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
+
+*::selection {
+    background: var(--red);
+    color: white;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+
+}
+
+
+:root {
+    --white: #ffffff;
+    --red: #ff4400;
+    --section-bg-color: #f0f8ff;
+    --black: #000000;
+    --grey: #d0d1d1;
+    --p: #717275;
+    --body-font-family: "Inter", sans-serif;
+}
+
+.slideshow-container {
+    transition: all ease-in-out 3s;
+}
+
+.slides {
+    height: 90vh;
+    width: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top center;
+    animation: slide 12s linear infinite;
+}
+
+.my-other-custom-class {
+    margin: 100px;
+    background: #000;
+}
+
+.gradient {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7));
+
+}
+
+@keyframes slide {
+    0% {
+        background-image: url("../src/assets/images/slideshow/medium-shot-business-women-high-five.jpeg");
+    }
+
+    33.33% {
+        background-image: url("../src/assets/images/slideshow/team-meeting-renewable-energy-project.jpeg");
+    }
+
+    66.66% {
+        background-image: url("../src/assets/images/slideshow/two-business-partners-working-together-office-computer.jpeg");
+    }
+
+    100% {
+        background-image: url("../src/assets/images/slideshow/medium-shot-business-women-high-five.jpeg");
+    }
+}
+
+.icon {
+    transition: all ease 0.3s;
+}
+
+.item:hover .icon {
+    transform: translateX(.5vw);
+    color: var(--red);
+    opacity: 1;
+
+}
+
+.font {
+    font-weight: 800;
+    font-family: sans-serif;
+}
+
+.font-b {
+    font-weight: 800;
+    font-family: sans-serif;
+    font-size: max(2.8vw, 2.2rem);
+}
+
+.c-red {
+    color: var(--red);
+}
+
+.shadow-c {
+    box-shadow: 0 1rem 3rem rgba(0, 0, 0, .175);
+}
+
+.hov:hover {
+    color: whitesmoke;
+}
+
+.btn.active {
+    background: black;
+}
+
+
+.clll {
+    /* border-radius: 33px; */
+
+    box-shadow: inset 5px 5px 9px #696d77,
+        inset -5px -5px 9px #1b263e;
+}
+
+.bg-linear {
+    border-radius: 25px;
+    background: linear-gradient(145deg, #e6e6e6, #ffffff);
+    box-shadow: 14px 14px 28px #cccccc,
+        -14px -14px 28px #ffffff;
+}

@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #333;
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.toast {
+    position: fixed;
+    top: -100px;
+    /* Initially, the toast is positioned outside the screen */
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    transition: top 0.5s ease;
+    /* Add transition for smooth animation */
+}
+
+.toast-success {
+    top: 20px;
+    /* Animate the toast to slide from top to bottom */
+}
+
+.toast-error {
+    top: 20px;
+    /* Animate the toast to slide from top to bottom */
+}
