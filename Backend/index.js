@@ -6,7 +6,7 @@ import dotenv from "dotenv";
 
 dotenv.config();
 app.get('/', (req, res) => {
-    res.send('Server Woring...!!!')
+    res.send('Server Working...!!!')
 })
 
 const PORT = process.env.PORT || 4000;
