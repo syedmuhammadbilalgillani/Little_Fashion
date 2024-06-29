@@ -167,7 +167,7 @@ const ProductItem = ({ product, badges }) => (
       <Link to={`/product/${product._id}`}>
         <img
           src={product.images[0]}
-          className="transition-all ease-out hover:shadow-2xl shadow-slate-200 dark:hover:shadow-slate-400"
+          className="transition-all ease-out h-80 hover:shadow-2xl shadow-slate-200 dark:hover:shadow-slate-400"
           alt=""
           loading="lazy"
         />
