@@ -36,17 +36,17 @@ const Forget = () => {
       switch (action) {
         case "generateOTP":
           endpoint =
-            "https://little-fashion-backend.onrender.com/api/v1/user/generateAndSendOTP";
+            "https://littlefasionserver.vercel.app/api/v1/user/generateAndSendOTP";
           message = "OTP generated successfully";
           break;
         case "verifyOTP":
           endpoint =
-            "https://little-fashion-backend.onrender.com/api/v1/user/verifyOTP";
+            "https://littlefasionserver.vercel.app/api/v1/user/verifyOTP";
           message = "OTP verified successfully";
           break;
         case "updatePassword":
           endpoint =
-            "https://little-fashion-backend.onrender.com/api/v1/user/updatePassword";
+            "https://littlefasionserver.vercel.app/api/v1/user/updatePassword";
           message = "Password updated successfully";
           break;
         default:

@@ -15,7 +15,7 @@ const Badge = () => {
   const fetchBadges = async () => {
     try {
       const res = await axios.get(
-        "https://little-fashion-backend.onrender.com/api/v1/badge/readBadge"
+        "https://littlefasionserver.vercel.app/api/v1/badge/readBadge"
       );
       setBadges(res.data);
     } catch (err) {
@@ -36,7 +36,7 @@ const Badge = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://little-fashion-backend.onrender.com/api/v1/badge/createBadge",
+        "https://littlefasionserver.vercel.app/api/v1/badge/createBadge",
         { name: badgeName }
       );
       setBadgeName(""); // Clear input field after submission
@@ -51,7 +51,7 @@ const Badge = () => {
   const handleDelete = async (badgeId) => {
     try {
       await axios.delete(
-        `https://little-fashion-backend.onrender.com/api/v1/badge/deleteBadge/${badgeId}`
+        `https://littlefasionserver.vercel.app/api/v1/badge/deleteBadge/${badgeId}`
       );
       fetchBadges(); // Fetch badges again to update the list after deletion
     } catch (error) {

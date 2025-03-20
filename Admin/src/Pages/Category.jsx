@@ -15,7 +15,7 @@ const Badge = () => {
   const fetchCategories = async () => {
     try {
       const res = await axios.get(
-        "https://little-fashion-backend.onrender.com/api/v1/category/readCategories"
+        "https://littlefasionserver.vercel.app/api/v1/category/readCategories"
       );
       setCategories(res.data);
     } catch (err) {
@@ -36,7 +36,7 @@ const Badge = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://little-fashion-backend.onrender.com/api/v1/category/createCategory",
+        "https://littlefasionserver.vercel.app/api/v1/category/createCategory",
         { name: categoryName }
       );
       setCategoriesName(""); // Clear input field after submission
@@ -51,7 +51,7 @@ const Badge = () => {
   const handleDelete = async (categoryId) => {
     try {
       await axios.delete(
-        `https://little-fashion-backend.onrender.com/api/v1/category/deleteCategory/${categoryId}`
+        `https://littlefasionserver.vercel.app/api/v1/category/deleteCategory/${categoryId}`
       );
       fetchCategories(); // Fetch categories again to update the list after deletion
     } catch (error) {

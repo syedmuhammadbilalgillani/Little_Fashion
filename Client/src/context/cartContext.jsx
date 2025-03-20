@@ -18,7 +18,7 @@ export const CartProvider = ({ children }) => {
     try {
       const token = localStorage.getItem("accessToken");
       const response = await fetch(
-        "https://little-fashion-backend.onrender.com/api/v1/cart/get-cart",
+        "https://littlefasionserver.vercel.app/api/v1/cart/get-cart",
         {
           headers: {
             Authorization: `Bearer ${token}`,
@@ -46,7 +46,7 @@ export const CartProvider = ({ children }) => {
         return;
       }
       const response = await fetch(
-        "https://little-fashion-backend.onrender.com/api/v1/cart/add-to-cart",
+        "https://littlefasionserver.vercel.app/api/v1/cart/add-to-cart",
         {
           method: "POST",
           headers: {
@@ -77,7 +77,7 @@ export const CartProvider = ({ children }) => {
         return;
       }
       const response = await fetch(
-        `https://little-fashion-backend.onrender.com/api/v1/cart/remove-from-cart/${productId}`,
+        `https://littlefasionserver.vercel.app/api/v1/cart/remove-from-cart/${productId}`,
         {
           method: "DELETE",
           headers: {

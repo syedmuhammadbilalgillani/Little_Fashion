@@ -4,10 +4,14 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
-    "dev": "node ./index.js",
-    "devv": "nodemon --env-file .env ./index.js",
-    "start": "nodemon ./index.js"
+    "dev": "nodemon --env-file .env ./index.js",
+    "build": "node --env-file .env ./index.js",
+    "start": "node ./index.js",
+    "seed": "node ./src/seeds/seed.js"
   },
   "keywords": [],
   "author": "",

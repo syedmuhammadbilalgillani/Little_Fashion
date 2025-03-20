@@ -29,11 +29,11 @@ const Product = () => {
 
   useEffect(() => {
     fetchData(
-      "https://little-fashion-backend.onrender.com/api/v1/badge/readBadge",
+      "https://littlefasionserver.vercel.app/api/v1/badge/readBadge",
       setBadges
     );
     fetchData(
-      "https://little-fashion-backend.onrender.com/api/v1/category/readCategories",
+      "https://littlefasionserver.vercel.app/api/v1/category/readCategories",
       setCategories
     );
     fetchProducts();
@@ -57,7 +57,7 @@ const Product = () => {
   const fetchProducts = async () => {
     try {
       const response = await axios.get(
-        "https://little-fashion-backend.onrender.com/api/v1/product/read"
+        "https://littlefasionserver.vercel.app/api/v1/product/read"
       );
       if (response.status === 200) {
         setProducts(response.data);
@@ -117,7 +117,7 @@ const Product = () => {
 
     try {
       const response = await axios.post(
-        "https://little-fashion-backend.onrender.com/api/v1/product/create",
+        "https://littlefasionserver.vercel.app/api/v1/product/create",
         formDataToSend
       );
       if (response.status === 201) {
@@ -141,7 +141,7 @@ const Product = () => {
   const handleDelete = async (productId) => {
     try {
       const response = await axios.delete(
-        `https://little-fashion-backend.onrender.com/api/v1/product/deleteById/${productId}`
+        `https://littlefasionserver.vercel.app/api/v1/product/deleteById/${productId}`
       );
       if (response.status === 200) {
         toast.success("Product deleted successfully");
@@ -403,7 +403,7 @@ export function EditProducts({
       selectedFiles.forEach((file) => formData.append("image", file));
 
       const response = await fetch(
-        `https://little-fashion-backend.onrender.com/api/v1/product/${productId}/image`,
+        `https://littlefasionserver.vercel.app/api/v1/product/${productId}/image`,
         {
           method: "POST",
           body: formData,
@@ -429,7 +429,7 @@ export function EditProducts({
   const handleRemoveImage = async (imageIndex) => {
     try {
       const response = await axios.delete(
-        `https://little-fashion-backend.onrender.com/api/v1/product/${productId}/images/${imageIndex}`
+        `https://littlefasionserver.vercel.app/api/v1/product/${productId}/images/${imageIndex}`
       );
       if (response.status === 200) {
         const updatedImages = [...productData.images];
@@ -447,7 +447,7 @@ export function EditProducts({
     const fetchProductById = async () => {
       try {
         const response = await axios.get(
-          `https://little-fashion-backend.onrender.com/api/v1/product/readById/${productId}`
+          `https://littlefasionserver.vercel.app/api/v1/product/readById/${productId}`
         );
         if (response.status === 200) {
           setProductData(response.data);
@@ -476,7 +476,7 @@ export function EditProducts({
 
     try {
       const response = await fetch(
-        `https://little-fashion-backend.onrender.com/api/v1/product/editAndUpdate/${productId}`,
+        `https://littlefasionserver.vercel.app/api/v1/product/editAndUpdate/${productId}`,
         {
           method: "PUT",
           headers: {

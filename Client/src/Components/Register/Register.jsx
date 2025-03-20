@@ -26,7 +26,7 @@ const Register = () => {
 
     try {
       const response = await fetch(
-        "https://little-fashion-backend.onrender.com/api/v1/user/create",
+        "https://littlefasionserver.vercel.app/api/v1/user/create",
         {
           method: "POST",
           headers: {

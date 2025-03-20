@@ -18,7 +18,7 @@ function ProductDetail() {
       setIsLoading(true);
       try {
         const response = await fetch(
-          `https://little-fashion-backend.onrender.com/api/v1/product/readById/${productId}`
+          `https://littlefasionserver.vercel.app/api/v1/product/readById/${productId}`
         );
         if (!response.ok) throw new Error("Network response was not ok");
         const data = await response.json();

@@ -25,7 +25,7 @@ const OrdersList = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://little-fashion-backend.onrender.com/api/v1/user/users-with-orders"
+          "https://littlefasionserver.vercel.app/api/v1/user/users-with-orders"
         );
         if (!response.ok) throw new Error("Failed to fetch data");
         const data = await response.json();
@@ -41,7 +41,7 @@ const OrdersList = () => {
   const handleStatusUpdate = async (orderId, newStatus) => {
     try {
       const response = await fetch(
-        `https://little-fashion-backend.onrender.com/api/v1/user/orders/${orderId}/status`,
+        `https://littlefasionserver.vercel.app/api/v1/user/orders/${orderId}/status`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },

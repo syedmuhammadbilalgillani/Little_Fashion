@@ -8,7 +8,7 @@ const Users = () => {
     const fetchUsers = async () => {
       try {
         const response = await fetch(
-          `https://little-fashion-backend.onrender.com/api/v1/user/readAllUsers`
+          `https://littlefasionserver.vercel.app/api/v1/user/readAllUsers`
         ); // Assuming your API endpoint is at /api/users
         if (!response.ok) {
           throw new Error("Failed to fetch user data");
@@ -113,7 +113,7 @@ export default Users;
 //         // Fetch user data from the API
 //         const fetchUsers = async () => {
 //             try {
-//                 const response = await fetch('https://little-fashion-backend.onrender.com/api/v1/user/readAllUsers');
+//                 const response = await fetch('https://littlefasionserver.vercel.app/api/v1/user/readAllUsers');
 //                 if (!response.ok) {
 //                     throw new Error('Failed to fetch user data');
 //                 }
@@ -129,7 +129,7 @@ export default Users;
 
 //     const deleteUser = async (userId) => {
 //         try {
-//             const response = await fetch(`https://little-fashion-backend.onrender.com/api/v1/user/delete/${userId}`, {
+//             const response = await fetch(`https://littlefasionserver.vercel.app/api/v1/user/delete/${userId}`, {
 //                 method: 'DELETE',
 //             });
 //             if (!response.ok) {

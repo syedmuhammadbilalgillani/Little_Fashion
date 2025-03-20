@@ -18,7 +18,7 @@ function LoginForm() {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "https://little-fashion-backend.onrender.com/api/v1/user/login",
+        "https://littlefasionserver.vercel.app/api/v1/user/login",
         {
           method: "POST",
           headers: {

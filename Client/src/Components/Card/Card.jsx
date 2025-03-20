@@ -15,11 +15,11 @@ function Card({ limit, showSearch = true, showPagination = true }) {
 
   useEffect(() => {
     fetchData(
-      "https://little-fashion-backend.onrender.com/api/v1/badge/readBadge",
+      "https://littlefasionserver.vercel.app/api/v1/badge/readBadge",
       setBadges
     );
     fetchData(
-      "https://little-fashion-backend.onrender.com/api/v1/category/readCategories",
+      "https://littlefasionserver.vercel.app/api/v1/category/readCategories",
       setCategories
     );
     fetchProducts();
@@ -55,7 +55,7 @@ function Card({ limit, showSearch = true, showPagination = true }) {
   const fetchProducts = async () => {
     try {
       const response = await fetch(
-        "https://little-fashion-backend.onrender.com/api/v1/product/read"
+        "https://littlefasionserver.vercel.app/api/v1/product/read"
       );
       if (!response.ok) {
         throw new Error("Failed to fetch products");

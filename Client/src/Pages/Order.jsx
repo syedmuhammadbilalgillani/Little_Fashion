@@ -27,7 +27,7 @@ const Order = () => {
     const fetchData = async () => {
       try {
         const response = await fetch(
-          "https://little-fashion-backend.onrender.com/api/v1/payment/readBankAccountDetails",
+          "https://littlefasionserver.vercel.app/api/v1/payment/readBankAccountDetails",
           {
             method: "GET",
             headers: {
@@ -99,7 +99,7 @@ const Order = () => {
       });
 
       const response = await fetch(
-        "https://little-fashion-backend.onrender.com/api/v1/order/checkout",
+        "https://littlefasionserver.vercel.app/api/v1/order/checkout",
         {
           method: "POST",
           headers: {

@@ -17,7 +17,7 @@ const BankDetails = () => {
   const fetchBankAccounts = async () => {
     try {
       const res = await axios.get(
-        "https://little-fashion-backend.onrender.com/api/v1/payment/readBankAccountDetailsadmin"
+        "https://littlefasionserver.vercel.app/api/v1/payment/readBankAccountDetailsadmin"
       );
       setBankAccounts(res.data.bankAccounts);
     } catch (err) {
@@ -38,7 +38,7 @@ const BankDetails = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://little-fashion-backend.onrender.com/api/v1/payment/createBankDetails",
+        "https://littlefasionserver.vercel.app/api/v1/payment/createBankDetails",
         {
           bankAccountName: bankAccountName,
           bankAccountNumber: bankAccountNumber,
@@ -59,7 +59,7 @@ const BankDetails = () => {
   const handleDeleteBankAccount = async (bankAccountId) => {
     try {
       await axios.delete(
-        `https://little-fashion-backend.onrender.com/api/v1/payment/deleteBankAccount/${bankAccountId}`
+        `https://littlefasionserver.vercel.app/api/v1/payment/deleteBankAccount/${bankAccountId}`
       );
       fetchBankAccounts();
     } catch (error) {
@@ -204,7 +204,7 @@ export default BankDetails;
 //     const handleSubmit = async (e) => {
 //         e.preventDefault();
 //         try {
-//             const response = await axios.post('https://little-fashion-backend.onrender.com/api/v1/payment/createBankDetails', formData);
+//             const response = await axios.post('https://littlefasionserver.vercel.app/api/v1/payment/createBankDetails', formData);
 //             const { data } = response;
 //             toast.success(data.message);
 //             setFormData({

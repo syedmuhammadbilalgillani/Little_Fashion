@@ -9,7 +9,7 @@ function FormList() {
     async function fetchData() {
       try {
         const response = await axios.get(
-          "https://little-fashion-backend.onrender.com/api/v1/contactForm/getsubmitForm"
+          "https://littlefasionserver.vercel.app/api/v1/contactForm/getsubmitForm"
         );
         setFormDataList(response.data);
       } catch (error) {

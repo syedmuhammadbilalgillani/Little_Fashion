@@ -32,7 +32,7 @@ function Profile() {
   const fetchProfileData = async () => {
     try {
       const response = await fetch(
-        "https://little-fashion-backend.onrender.com/api/v1/user/profile",
+        "https://littlefasionserver.vercel.app/api/v1/user/profile",
         {
           method: "GET",
           headers: { Authorization: `Bearer ${accessToken}` },
@@ -53,7 +53,7 @@ function Profile() {
   const fetchOrders = async () => {
     try {
       const response = await fetch(
-        "https://little-fashion-backend.onrender.com/api/v1/order/readOrders",
+        "https://littlefasionserver.vercel.app/api/v1/order/readOrders",
         {
           method: "GET",
           headers: { Authorization: `Bearer ${accessToken}` },
@@ -96,7 +96,7 @@ function Profile() {
 
     try {
       const response = await fetch(
-        "https://little-fashion-backend.onrender.com/api/v1/user/avatar",
+        "https://littlefasionserver.vercel.app/api/v1/user/avatar",
         {
           method: "POST",
           headers: { Authorization: `Bearer ${accessToken}` },
@@ -121,7 +121,7 @@ function Profile() {
     event.preventDefault();
     try {
       const response = await fetch(
-        "https://little-fashion-backend.onrender.com/api/v1/user/update",
+        "https://littlefasionserver.vercel.app/api/v1/user/update",
         {
           method: "PUT",
           headers: {

@@ -18,7 +18,7 @@ function ContactForm() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://little-fashion-backend.onrender.com/api/v1/contactForm/submitForm",
+        "https://littlefasionserver.vercel.app/api/v1/contactForm/submitForm",
         formData
       );
       console.log(response.data);
