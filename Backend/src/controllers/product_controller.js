@@ -65,6 +65,7 @@ export const createProduct = async (req, res) => {
     try {
         const { name, description, price, badgeId, categoryId } = req.body;
         // Check if req.files exists and is an array before mapping
+        
         const images = req.files && Array.isArray(req.files) ? req.files.map(file => file.path) : [];
         if (images.length === 0) {
             return res.status(400).json({ message: 'No images uploaded' });

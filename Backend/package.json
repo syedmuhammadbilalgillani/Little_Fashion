@@ -11,7 +11,9 @@
     "dev": "nodemon --env-file .env ./index.js",
     "build": "node --env-file .env ./index.js",
     "start": "node ./index.js",
-    "seed": "node ./src/seeds/seed.js"
+    "debug:break": "node --inspect-brk --env-file .env ./index.js",
+    "debug:watch": "nodemon --inspect --env-file .env ./index.js",
+    "debug:test": "node --inspect --env-file .env ./index.js test"
   },
   "keywords": [],
   "author": "",

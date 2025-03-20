@@ -21,11 +21,12 @@ import contactFormRoute from "./routes/contactForm_route.js";
 
 const app = express();
 
+
 // Define the list of allowed origins
 const allowedOrigins = [
     'http://localhost:5173',
     'http://localhost:5174',
-    'https://littlefashion-pi.vercel.app/'
+    'https://littlefashion-pi.vercel.app'
 ];
 
 const corsOptions = {
@@ -44,11 +45,12 @@ const corsOptions = {
     allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With']
 };
 
-// Apply CORS middleware
+// Apply CORS middleware - Move this BEFORE any route definitions
 app.use(cors(corsOptions));
 
-// Handle preflight requests
+// Handle preflight requests - Keep this line
 app.options('*', cors(corsOptions));
+
 
 app.use(express.json({ limit: "16kb" }));
 app.use(express.urlencoded({ extended: true, limit: "16kb" }));
