@@ -158,11 +158,14 @@ const ProductItem = ({ product, badges }) => (
     data-aos-mirror="false"
   >
     <div className="relative ease-linear">
-      <div className="flex justify-between px-[max(1.25vw,1.25rem)] py-[max(.8vw,.8rem)] w-full absolute top-0 left-0 overflow-hidden">
+      <div className="absolute top-0  right-0 w-full">
+
+      <div className="flex justify-between  py-[max(.8vw,.8rem)] w-full  px-5 overflow-hidden">
         <span className="bg-gray-100 text-gray-800 text-[max(.8vw,.8rem)] font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
           {badges.find((badge) => badge._id === product.badgeId)?.name}
         </span>
         <i className="fa-solid fa-heart text-white text-[max(1vw,1rem)] hover:text-[--red]"></i>
+      </div>
       </div>
       <Link to={`/product/${product._id}`}>
         <img
