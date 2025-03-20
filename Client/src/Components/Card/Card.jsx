@@ -158,20 +158,20 @@ const ProductItem = ({ product, badges }) => (
     data-aos-mirror="false"
   >
     <div className="relative ease-linear">
-      <div className="absolute top-0  right-0 w-full">
-
-      <div className="flex justify-between  py-[max(.8vw,.8rem)] w-full  px-5 overflow-hidden">
-        <span className="bg-gray-100 text-gray-800 text-[max(.8vw,.8rem)] font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
-          {badges.find((badge) => badge._id === product.badgeId)?.name}
-        </span>
-        <i className="fa-solid fa-heart text-white text-[max(1vw,1rem)] hover:text-[--red]"></i>
-      </div>
-      </div>
+    <div className="absolute top-0 right-0 w-full z-10">
+    <div className="flex justify-between py-[max(.8vw,.8rem)] w-full px-5">
+      <span className="bg-gray-100 text-gray-800 text-[max(.8vw,.8rem)] font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+        {badges.find((badge) => badge._id === product.badgeId)?.name}
+      </span>
+      <i className="fa-solid fa-heart text-white text-[max(1vw,1rem)] hover:text-[--red] drop-shadow-md"></i>
+    </div>
+  </div>
       <Link to={`/product/${product._id}`}>
         <img
           src={product.images[0]}
-          className="transition-all ease-out h-80 hover:shadow-2xl shadow-slate-200 dark:hover:shadow-slate-400"
+          className="transition-all  ease-out h-80 hover:shadow-2xl shadow-slate-200 dark:hover:shadow-slate-400"
           alt=""
+          
           loading="lazy"
         />
       </Link>
@@ -183,7 +183,7 @@ const ProductItem = ({ product, badges }) => (
           <div className="text-[max(1.7vw,1.6rem)] dark:text-gray-300 font-medium hover:text-[--red] dark:hover:text-[--red]">
             {product.name}
           </div>
-          <h4 className="text-[max(1vw,1rem)] text-[--p] select-none">
+          <h4 className="text-[max(1vw,1rem)] text-[--p] select-none text-wrap line-clamp-1 overflow-hidden text-ellipsis">
             {product.description}
           </h4>
         </div>
