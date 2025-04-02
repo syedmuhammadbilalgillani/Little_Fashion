@@ -12,7 +12,7 @@ function Card({ limit, showSearch = true, showPagination = true }) {
   const [currentPage, setCurrentPage] = useState(1);
   const [itemsPerPage] = useState(6); // Change this value as needed
   const inputRef = useRef(null);
-
+  const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     fetchData(
       "https://littlefasionserver.vercel.app/api/v1/badge/readBadge",
@@ -54,15 +54,19 @@ function Card({ limit, showSearch = true, showPagination = true }) {
 
   const fetchProducts = async () => {
     try {
+      setIsLoading(true)
       const response = await fetch(
         "https://littlefasionserver.vercel.app/api/v1/product/read"
       );
       if (!response.ok) {
+        setIsLoading(false)
         throw new Error("Failed to fetch products");
       }
+      setIsLoading(false)
       const data = await response.json();
       setProducts(data);
     } catch (error) {
+      setIsLoading(false)
       console.error("Error fetching products:", error);
     }
   };
@@ -104,7 +108,7 @@ function Card({ limit, showSearch = true, showPagination = true }) {
         draggable
         pauseOnHover
         theme="colored"
-        transition:Flip
+        transition="Flip"
       />
       {showSearch && (
         <div>
@@ -125,6 +129,8 @@ function Card({ limit, showSearch = true, showPagination = true }) {
         <p className="text-center text-gray-500 text-4xl m-8">
           No products available.
         </p>
+      ) : isLoading ? (
+         <Loading isLoading={isLoading} />
       ) : (
         <>
           <section className="grid grid-cols-12 py-[3%] gap-[5vw]">
@@ -158,20 +164,19 @@ const ProductItem = ({ product, badges }) => (
     data-aos-mirror="false"
   >
     <div className="relative ease-linear">
-    <div className="absolute top-0 right-0 w-full z-10">
-    <div className="flex justify-between py-[max(.8vw,.8rem)] w-full px-5">
-      <span className="bg-gray-100 text-gray-800 text-[max(.8vw,.8rem)] font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
-        {badges.find((badge) => badge._id === product.badgeId)?.name}
-      </span>
-      <i className="fa-solid fa-heart text-white text-[max(1vw,1rem)] hover:text-[--red] drop-shadow-md"></i>
-    </div>
-  </div>
+      <div className="absolute top-0 right-0 w-full z-10">
+        <div className="flex justify-between py-[max(.8vw,.8rem)] w-full px-5">
+          <span className="bg-gray-100 text-gray-800 text-[max(.8vw,.8rem)] font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-gray-300">
+            {badges.find((badge) => badge._id === product.badgeId)?.name}
+          </span>
+          <i className="fa-solid fa-heart text-white text-[max(1vw,1rem)] hover:text-[--red] drop-shadow-md"></i>
+        </div>
+      </div>
       <Link to={`/product/${product._id}`}>
         <img
           src={product.images[0]}
-          className="transition-all  ease-out h-80 hover:shadow-2xl shadow-slate-200 dark:hover:shadow-slate-400"
+          className="transition-all   ease-out  hover:shadow-2xl shadow-slate-200 dark:hover:shadow-slate-400"
           alt=""
-          
           loading="lazy"
         />
       </Link>
@@ -229,5 +234,19 @@ const Pagination = ({ totalPages, currentPage, paginate }) => (
     </button>
   </div>
 );
-
+const Loading = ({ isLoading }) => {
+  if (isLoading) {
+    return (
+      <div className="flex flex-col items-center justify-center min-h-[50vh] py-16 px-4">
+        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[--red] mb-4"></div>
+        <p className="text-lg font-medium dark:text-white">
+          Loading product details...
+        </p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+          Please wait while we fetch the latest information
+        </p>
+      </div>
+    );
+  }
+};
 export default Card;

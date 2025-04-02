@@ -70,10 +70,15 @@ function ProductDetail() {
       {isLoading && (
         <div className="flex flex-col items-center justify-center min-h-[50vh] py-16 px-4">
           <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-[--red] mb-4"></div>
-          <p className="text-lg font-medium dark:text-white">Loading product details...</p>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">Please wait while we fetch the latest information</p>
+          <p className="text-lg font-medium dark:text-white">
+            Loading product details...
+          </p>
+          <p className="text-sm text-gray-500 dark:text-gray-400 mt-2">
+            Please wait while we fetch the latest information
+          </p>
         </div>
-      )}      {!isLoading && product && (
+      )}
+      {!isLoading && product && (
         <div className="grid grid-cols-2 px-[6%] w-full py-[9vw] dark:text-white">
           <div className="col-span-1 md:col-span-2 sm:col-span-2 xs:col-span-2">
             <img src={selectedImage} className="w-full" alt={product.name} />
