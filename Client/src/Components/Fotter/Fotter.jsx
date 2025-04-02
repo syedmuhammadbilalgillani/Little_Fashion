@@ -17,9 +17,9 @@ function Fotter() {
                     <div className="col-span-4 md:col-span-6 sm:col-span-12 xs:col-span-12
                      space-y-7 select-none">
                         <h1 className='hover:text-[--red] text-[max(1.9vw,1.9rem)] font-bold'>Little <span className='text-white'>Fashion</span></h1>
-                        <h4 className='text-[max(1vw,1rem)]'>Copyright © 2022 Little Fashion
+                        <h4 className='text-[max(1vw,1rem)]'>Copyright © 2025 Little Fashion
                         </h4>
-                        <h4 className='text-[max(1vw,1rem)]'>  Designed by Tooplate</h4>
+                        <h4 className='text-[max(1vw,1rem)]'>  Designed by Syed Bilal</h4>
                     </div>
                     <div className="col-span-4 md:col-span-6 sm:col-span-12 xs:col-span-12
                      space-y-4 select-none">
