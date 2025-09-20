@@ -9,14 +9,15 @@ import { NavLink } from "react-router-dom";
 
 
 function Home() {
-    const heroobj = {
-        img: imgp, // Replace "imageSourceHere" with the actual image source
-        headingRed: "Retail",
-        headingText: " shop owners",
-        paragraphText: "Credits go to Unsplash and FreePik websites for images used in this Little Fashion by Tooplate. EXPLORE PRODUCTS",
-        linkText: "EXPLORE PRODUCTS",
-        linkTo: "/product"
-    };
+   const heroobj = {
+  img: imgp, // main banner/hero image
+  headingRed: "Your One-Stop",
+  headingText: " Online Store",
+  paragraphText:
+    "Discover the latest collections in fashion, electronics, and lifestyle essentials. Shop top brands at the best prices with fast delivery and secure checkout.",
+  linkText: "Shop Now",
+  linkTo: "/products"
+};
     return (
         <>
             <main className="">

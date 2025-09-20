@@ -8,9 +8,9 @@
     "node": "22.x"
   },
   "scripts": {
-    "dev": "nodemon --env-file .env ./index.js",
-    "build": "node --env-file .env ./index.js",
-    "start": "node ./index.js",
+    "dev": "node init && nodemon --env-file .env ./index.js",
+    "build": "node init && node --env-file .env ./index.js",
+    "start": "node init && node ./index.js",
     "debug:break": "node --inspect-brk --env-file .env ./index.js",
     "debug:watch": "nodemon --inspect --env-file .env ./index.js",
     "debug:test": "node --inspect --env-file .env ./index.js test"
